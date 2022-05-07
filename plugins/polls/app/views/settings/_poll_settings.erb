@@ -1,0 +1,26 @@
+<table>
+  <tbody>
+    <tr>
+      <th>CC mail address for remainder</th>
+      <td>
+        <input type="text" id="settings_remainder_cc"
+                           value="<%= settings['remainder_cc'] %>"
+                           name="settings[remainder_cc]" >
+      </td>
+    </tr>
+    <tr>
+      <th>due date (default)</th>
+      <td>
+        <input type="number" id="settings_duedate_default"
+                             value="<%= settings['duedate_default'] %>"
+                             name="settings[duedate_default]" >
+      </td>
+    </tr>
+    <tr>
+      <th>holiday of calendar</th>
+      <td>
+        <textarea id="settings_calendar_holiday" name="settings[calendar_holiday]" rows="10" placeholder=" format: 2022-10-11"><%= settings['calendar_holiday'] %></textarea>
+      <td>
+    </tr>
+  </tbody>
+</table>
