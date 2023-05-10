@@ -44,4 +44,4 @@ pluginsetup:
 #	cd ${WORK_DIR}/${REDMINE_DIR}/plugins/${REDMINE_MYPLUGIN} && bundle install
 
 plugintest:
-	cd ${WORK_DIR}/${REDMINE_DIR} && RAILS_ENV=${EXEC_ENV} COVERAGE=1 bundle exec rake redmine:plugins:test PLUGIN=${REDMINE_MYPLUGIN}
+	cd ${WORK_DIR}/${REDMINE_DIR} && RAILS_ENV=${EXEC_ENV} COVERAGE=1 bundle exec rake redmine:plugins:test NAME=${REDMINE_MYPLUGIN}
