@@ -26,19 +26,19 @@ clean:
 	rm -fr ${WORK_DIR}
 
 redmineinstall:
-	mkdir -p ${WORK_DIR}
-	rm -f ${WORK_DIR}/${REDMINE_TARBALL}
+	mkdir -vp ${WORK_DIR}
+	rm -vf ${WORK_DIR}/${REDMINE_TARBALL}
 	wget --no-check-certificate "${REDMINE_DL_URL}" -P ${WORK_DIR}
 	tar xf ${WORK_DIR}/${REDMINE_TARBALL} -C ${WORK_DIR}
 
 redminesetup:
-	cp -f config/database.yml ${WORK_DIR}/${REDMINE_DIR}/config/
+	cp -vf config/database.yml ${WORK_DIR}/${REDMINE_DIR}/config/
 	cd ${WORK_DIR}/${REDMINE_DIR} && bundle install
 	cd ${WORK_DIR}/${REDMINE_DIR} && bundle exec rake generate_secret_token
 	cd ${WORK_DIR}/${REDMINE_DIR} && RAILS_ENV=${EXEC_ENV} bundle exec rake db:migrate
 
 plugininstall:
-	cp -r plugins/polls ${WORK_DIR}/${REDMINE_DIR}/plugins/
+	cp -vr plugins/polls ${WORK_DIR}/${REDMINE_DIR}/plugins/
 
 pluginsetup:
 #	cd ${WORK_DIR}/${REDMINE_DIR}/plugins/${REDMINE_MYPLUGIN} && bundle install
